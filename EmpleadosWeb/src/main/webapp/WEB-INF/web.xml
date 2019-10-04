@@ -1,0 +1,40 @@
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">  
+  <display-name>EmpleadosWeb</display-name>
+ 	<!-- <servlet>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <servlet-class>
+                     org.glassfish.jersey.servlet.ServletContainer
+                </servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.prueba.totems.conf.ApplicationConf</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+  <servlet-mapping>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping> -->
+    <servlet>
+    	<servlet-name>com.prueba.totems.conf.ApplicationConf</servlet-name>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>com.prueba.totems.conf.ApplicationConf</servlet-name>
+        <url-pattern>/v1/*</url-pattern>
+    </servlet-mapping> 
+     <servlet>
+        <servlet-name>SwaggerBootstrap</servlet-name>
+        <servlet-class>com.prueba.totems.conf.Bootstrap</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <ejb-local-ref>
+    	<ejb-ref-name>ejb/EmpleadoFacade</ejb-ref-name>
+		 <ejb-ref-type>Session</ejb-ref-type>
+		 <local-home>com.prueba.porvenir.facade.EmpleadoFacade</local-home>
+		 <local>com.prueba.porvenir.facade.EmpleadoFacadeImpl</local>		
+    </ejb-local-ref>
+</web-app>

@@ -1,0 +1,5 @@
+com\prueba\totems\dto\EmpleadoDTO.class
+com\prueba\totems\dto\TypeDocumentEnum.class
+com\prueba\porvenir\facade\EmpleadoFacade.class
+com\prueba\porvenir\facade\EmpleadoFacadeImpl.class
+com\prueba\totems\dto\ParamsDTO.class
